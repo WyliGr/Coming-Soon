@@ -14,7 +14,7 @@ import '../styles/global.css';
 	<body class="custom-pattern">
 		<div class="flex flex-row flex-wrap justify-center items-center h-screen gap-4">
 			<div>
-				<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWhsbXVrNG9zejIwOGtvZnBib3B2OTlhcGE2aWpmamFmd2l1bDE5eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/IQebREsGFRXmo/giphy.gif" alt="Mew Gif" class="gif"/>
+				<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWhsbXVrNG9zejIwOGtvZnBib3B2OTlhcGE2aWpmamFmd2l1bDE5eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/IQebREsGFRXmo/giphy.gif" alt="Mew Gif" class="gif" id="github-gif"/>
 			</div>
 			<div>
 				<h1 class="bricolage-grotesque text-white text-4xl font-extrabold">Coming Soon ...</h1>
@@ -25,5 +25,13 @@ import '../styles/global.css';
 				</div>
 			</div>
 		</div>
+		<script>
+			const gifElement = document.getElementById('github-gif');
+			if (gifElement) {
+				gifElement.addEventListener('click', function() {
+					window.location.href = 'https://github.com/WyliGr';
+				});
+			}
+		</script>
 	</body>
 </html>
