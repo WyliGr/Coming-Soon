@@ -1,0 +1,20 @@
+# Use official Node.js image
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy source files
+COPY . .
+
+# Expose port
+EXPOSE 4321
+
+# Start development server
+CMD ["npm", "run", "dev"]
