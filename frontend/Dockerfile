@@ -13,8 +13,15 @@ RUN npm install
 # Copy source files
 COPY . .
 
+# Build the production site
+RUN npm run build
+
 # Expose port
 EXPOSE 4321
 
-# Start development server
-CMD ["npm", "run", "build"]
+# Start a simple HTTP server to serve the production build
+# First install a lightweight HTTP server
+RUN npm install -g serve
+
+# Serve the production build from the dist directory
+CMD ["serve", "dist", "-l", "4321"]

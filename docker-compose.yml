@@ -5,11 +5,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4321:4321"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     environment:
-      - NODE_ENV=development
-      - HOST=0.0.0.0
-    command: npm run dev -- --host
+      - NODE_ENV=production
     restart: unless-stopped
