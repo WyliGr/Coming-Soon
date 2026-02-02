@@ -5,6 +5,14 @@
 	background-image: radial-gradient(#181818 2px, transparent 2px);
 	background-size: 32px 32px;
 	background-color: #121213;
+	transition: background-size 0.3s ease;
+}
+
+/* Different pattern density for mobile */
+@media (max-width: 767px) {
+	.custom-pattern {
+		background-size: 24px 24px;
+	}
 }
 
 .space-grotesk {
@@ -18,4 +26,199 @@
 .gif {
     height: auto;
     width: 10rem;
+}
+
+/* Animations for mobile responsiveness */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out 0.2s forwards;
+}
+
+/* Desktop specific styles */
+@media (min-width: 768px) {
+    /* Desktop layout - keep original style */
+    .gif {
+        width: 12rem;
+    }
+    
+    /* Add subtle hover effect for desktop */
+    .gif:hover {
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+    }
+    
+    /* Style for desktop text container */
+    .rounded-lg {
+        border-radius: 0.5rem;
+    }
+    
+    .backdrop-blur-sm {
+        backdrop-filter: blur(4px);
+    }
+    
+    .bg-opacity-20 {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Margin styles */
+    .mx-4 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    .my-6 {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Mobile specific styles */
+@media (max-width: 767px) {
+    .gif {
+        width: 9rem;
+    }
+    
+    h1 {
+        font-size: 2.25rem !important; /* text-3xl equivalent */
+    }
+    
+    p {
+        font-size: 1rem !important; /* text-base equivalent */
+        line-height: 1.6 !important;
+    }
+    
+    /* Make mobile text slightly more compact */
+    .space-y-4 {
+        gap: 1.25rem !important;
+    }
+    
+    /* Increase mobile padding */
+    .px-4 {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+    
+    /* Add subtle glow to text on mobile */
+    h1 {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Smooth scrolling for mobile */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Mobile card styles */
+    .rounded-xl {
+        border-radius: 0.75rem;
+    }
+    
+    .p-6 {
+        padding: 1.5rem;
+    }
+    
+    .backdrop-blur-sm {
+        backdrop-filter: blur(8px);
+    }
+    
+    .bg-opacity-20 {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .border-opacity-10 {
+        border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    /* Add subtle border glow on mobile */
+    .border {
+        border-width: 1px;
+        border-style: solid;
+    }
+    
+    /* Margin styles for mobile */
+    .mt-4 {
+        margin-top: 1rem;
+    }
+    
+    .mb-8 {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Loading animation for GIF */
+.gif {
+    opacity: 0;
+    animation: fadeInGif 1s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInGif {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Add a subtle pulse effect to encourage interaction */
+.gif {
+    position: relative;
+}
+
+.gif::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: pulse 3s ease-in-out infinite;
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.1);
+    }
+}
+
+/* Remove pulse on hover/click */
+.gif:hover::after,
+.gif:active::after {
+    animation: none;
+    opacity: 0;
 }
