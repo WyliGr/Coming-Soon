@@ -1,0 +1,111 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Coming Soon :)</title>
+		<style>
+			/* Mobile-specific styles */
+			.mobile-view {
+				min-height: 100vh;
+				padding: 1rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				transition: all 0.3s ease;
+			}
+			
+			.content-card {
+				width: 100%;
+				max-width: 400px;
+				padding: 1.5rem;
+				background-color: rgba(0, 0, 0, 0.2);
+				border-radius: 0.75rem;
+				backdrop-filter: blur(8px);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				margin-top: 1rem;
+				margin-bottom: 2rem;
+				text-align: center;
+			}
+			
+			.gif-mobile {
+				width: 9rem;
+				height: auto;
+				margin-bottom: 2rem;
+				animation: fadeIn 0.8s ease-out;
+			}
+			
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(-20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			
+			.content-card {
+				animation: slideUp 0.8s ease-out 0.2s forwards;
+			}
+			
+			@keyframes slideUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		</style>
+	</head>
+	<body class="custom-pattern">
+		<div class="mobile-view">
+			<div class="gif-container">
+				<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWhsbXVrNG9zejIwOGtvZnBib3B2OTlhcGE2aWpmamFmd2l1bDE5eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/IQebREsGFRXmo/giphy.gif" alt="Mew Gif" class="gif-mobile cursor-pointer hover:scale-105 transition-transform duration-200" id="github-gif"/>
+			</div>
+			<div class="content-card">
+				<h1 class="bricolage-grotesque text-white text-3xl font-extrabold mb-6 leading-tight">Coming Soon ...</h1>
+				<div class="space-y-4">
+					<p class="space-grotesk text-white text-base leading-relaxed">
+						This website is currently under construction.
+					</p>
+					<p class="space-grotesk text-white text-base leading-relaxed">
+						We're putting the finishing touches on something special.
+					</p>
+					<p class="space-grotesk text-white text-base leading-relaxed">
+						You're going to love what's coming, I promise.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const gifElement = document.getElementById('github-gif');
+			if (gifElement) {
+				gifElement.addEventListener('click', () => {
+					window.location.href = 'https://github.com/WyliGr';
+				});
+				
+				// Mobile tap effects
+				gifElement.addEventListener('touchstart', () => {
+					gifElement.style.transform = 'scale(0.95)';
+				});
+				
+				gifElement.addEventListener('touchend', () => {
+					gifElement.style.transform = 'scale(1)';
+				});
+			}
+		</script>
+	</body>
+</html>

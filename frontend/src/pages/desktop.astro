@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Coming Soon :)</title>
+		<style>
+			/* Desktop-specific styles */
+			.desktop-view {
+				min-height: 100vh;
+				padding: 2rem;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				gap: 3rem;
+			}
+			
+			.text-container {
+				text-align: left;
+				max-width: 500px;
+			}
+			
+			.gif-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body class="custom-pattern">
+		<div class="desktop-view">
+			<div class="gif-container">
+				<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWhsbXVrNG9zejIwOGtvZnBib3B2OTlhcGE2aWpmamFmd2l1bDE5eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/IQebREsGFRXmo/giphy.gif" alt="Mew Gif" class="gif cursor-pointer hover:scale-105 transition-transform duration-200" id="github-gif"/>
+			</div>
+			<div class="text-container">
+				<h1 class="bricolage-grotesque text-white text-4xl font-extrabold mb-6">Coming Soon ...</h1>
+				<div class="space-y-4">
+					<p class="space-grotesk text-white text-lg">
+						This website is currently under construction.
+						<br>We're putting the finishing touches on something special.
+					</p>
+					<p class="space-grotesk text-white text-lg">
+						You're going to love what's coming, I promise.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const gifElement = document.getElementById('github-gif');
+			if (gifElement) {
+				gifElement.addEventListener('click', () => {
+					window.location.href = 'https://github.com/WyliGr';
+				});
+				
+				gifElement.addEventListener('mouseenter', () => {
+					gifElement.style.filter = 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.2))';
+				});
+				
+				gifElement.addEventListener('mouseleave', () => {
+					gifElement.style.filter = 'none';
+				});
+			}
+		</script>
+	</body>
+</html>
