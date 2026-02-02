@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 4321
 
 # Start development server
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "build"]
