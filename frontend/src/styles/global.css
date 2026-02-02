@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+.custom-pattern {
+	background-image: radial-gradient(#181818 2px, transparent 2px);
+	background-size: 32px 32px;
+	background-color: #121213;
+}
+
+.space-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.bricolage-grotesque {
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.gif {
+    height: auto;
+    width: 10rem;
+}
